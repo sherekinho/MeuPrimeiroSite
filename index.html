@@ -33,30 +33,14 @@
       font-size: 2rem;
       color: #e63946;
     }
-    nav {
-      margin-top: 10px;
-    }
-    nav button {
-      background: #f1f1f1;
-      border: none;
-      padding: 8px 16px;
-      margin: 5px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    nav button:hover {
-      background: #e63946;
-      color: #fff;
-    }
 
     /* HERO SECTION */
     .hero {
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
     .hero h2 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 10px;
     }
     .hero p {
@@ -76,7 +60,7 @@
     }
     .card {
       background: #fff;
-      border-radius: 12px;
+      border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
       overflow: hidden;
       transition: transform 0.2s, box-shadow 0.2s;
@@ -108,7 +92,7 @@
       align-items: center;
     }
     .price {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: bold;
       color: #e63946;
     }
@@ -116,7 +100,7 @@
       background: #e63946;
       color: #fff;
       text-decoration: none;
-      padding: 8px 16px;
+      padding: 8px 14px;
       border-radius: 6px;
       transition: background 0.2s;
     }
@@ -144,12 +128,6 @@
 
   <header>
     <h1>Minha Loja</h1>
-    <nav>
-      <button>Todos</button>
-      <button>Eletrônicos</button>
-      <button>Vestuário</button>
-      <button>Acessórios</button>
-    </nav>
   </header>
 
   <section class="hero">
@@ -157,19 +135,34 @@
     <p>Descubra nossa coleção exclusiva de produtos selecionados com cuidado para você.</p>
   </section>
 
+  <!-- ==============================
+       PRODUTOS - COPIE ESTE BLOCO 
+       PARA ADICIONAR MAIS PRODUTOS
+  =============================== -->
   <section class="grid">
+
+    <!-- PRODUTO 1 -->
     <div class="card">
+      <!-- 🔗 Troque o link abaixo pela imagem do produto -->
       <img src="https://via.placeholder.com/400x300" alt="Fones de ouvido">
       <div class="card-content">
+        <!-- 🏷️ Nome do produto -->
         <h3>Fones Premium Wireless</h3>
+
+        <!-- 📝 Descrição do produto -->
         <p>Som de alta qualidade com cancelamento de ruído ativo e bateria de longa duração.</p>
+
         <div class="price-buy">
+          <!-- 💲 Preço -->
           <span class="price">R$ 299,90</span>
-          <a href="#" class="buy-btn">Comprar</a>
+
+          <!-- 🛒 Link de compra - cole seu link de afiliado aqui -->
+          <a href="#" class="buy-btn" target="_blank">Comprar</a>
         </div>
       </div>
     </div>
 
+    <!-- PRODUTO 2 -->
     <div class="card">
       <img src="https://via.placeholder.com/400x300" alt="Smartwatch">
       <div class="card-content">
@@ -177,11 +170,12 @@
         <p>Monitoramento de saúde completo com GPS integrado e resistência à água.</p>
         <div class="price-buy">
           <span class="price">R$ 499,90</span>
-          <a href="#" class="buy-btn">Comprar</a>
+          <a href="#" class="buy-btn" target="_blank">Comprar</a>
         </div>
       </div>
     </div>
 
+    <!-- PRODUTO 3 -->
     <div class="card">
       <img src="https://via.placeholder.com/400x300" alt="Mochila Executiva">
       <div class="card-content">
@@ -189,23 +183,21 @@
         <p>Material resistente à água, múltiplos compartimentos e design ergonômico.</p>
         <div class="price-buy">
           <span class="price">R$ 199,90</span>
-          <a href="#" class="buy-btn">Comprar</a>
+          <a href="#" class="buy-btn" target="_blank">Comprar</a>
         </div>
       </div>
-    </div>#
+    </div>
 
-    <!-- Adicione mais produtos aqui -->
   </section>
 
   <footer>
     <p>Tem dúvidas sobre nossos produtos? Fale conosco!</p>
-    <p><a href="mailto:guilhermegood.lima@gmail.com">guilhermegood.lima@gmail.com</a> | <a href="#">https://wa.me/5513981425883</a></p>
+    <p>
+      <a href="mailto:guilhermegood.lima@gmail.com">guilhermegood.lima@gmail.com</a> |
+      <a href="https://wa.me/5513981425883" target="_blank">WhatsApp</a>
+    </p>
     <p>&copy; 2024 Minha Loja. Todos os direitos reservados.</p>
   </footer>
 
 </body>
 </html>
-
-
-
-
