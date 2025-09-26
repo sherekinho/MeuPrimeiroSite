@@ -1,12 +1,242 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Grátis</title>
-</head>
-<body>
-    <h1>Bem-vindo ao meu site!</h1>
-    <p>Este site foi publicado gratuitamente com GitHub Pages.</p>
-</body>
-</html>
+import React, { useState } from 'react';
+
+const ProductShowcase = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const categories = [
+    { id: 'all', name: 'Todos' },
+    { id: 'eletronicos', name: 'Eletrônicos' },
+    { id: 'vestuario', name: 'Vestuário' },
+    { id: 'acessorios', name: 'Acessórios' }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background text-foreground font-sans">
+      {/* Header */}
+      <header className="bg-background border-b border-border shadow-sm">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <h1 className="text-2xl md:text-3xl font-bold text-primary">Minha Loja</h1>
+            
+            {/* Categorias */}
+            <nav className="flex flex-wrap gap-2 justify-center">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                    selectedCategory === category.id
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground'
+                  }`}
+                >
+                  {category.name}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8">
+        {/* Hero Section */}
+        <section className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Produtos de Qualidade
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Descubra nossa coleção exclusiva de produtos selecionados com cuidado para você
+          </p>
+        </section>
+
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Product 1 */}
+          <div className="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 overflow-hidden">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Modern%20wireless%20headphones%20with%20black%20finish%20and%20silver%20accents%20on%20a%20minimalist%20background&id=6ba3bd9d-ed8e-4301-8ff3-e59355a8b2c0" 
+                alt="Fones de ouvido wireless modernos com acabamento preto e detalhes prateados em fundo minimalista"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-2">Fones Premium Wireless</h3>
+              <p className="text-muted-foreground mb-4">
+                Som de alta qualidade com cancelamento de ruído ativo e bateria de longa duração.
+              </p>
+              <div className="flex justify-between items-center">
+                <span className="text-2xl font-bold text-primary">R$ 299,90</span>
+                <a 
+                  href="#comprar" 
+                  className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200"
+                >
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Product 2 */}
+          <div className="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 overflow-hidden">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Sleek%20smartwatch%20with%20fitness%20tracking%20features%20on%20a%20wooden%20surface&id=6ba3bd9d-ed8e-4301-8ff3-e59355a8b2c0" 
+                alt="Smartwatch elegante com recursos de monitoramento fitness em superfície de madeira"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-2">Smartwatch Fitness</h3>
+              <p className="text-muted-foreground mb-4">
+                Monitoramento de saúde completo com GPS integrado e resistência à água.
+              </p>
+              <div className="flex justify-between items-center">
+                <span className="text-2xl font-bold text-primary">R$ 499,90</span>
+                <a 
+                  href="#comprar" 
+                  className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200"
+                >
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Product 3 */}
+          <div className="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 overflow-hidden">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Designer%20backpack%20with%20multiple%20compartments%20and%20modern%20design&id=6ba3bd9d-ed8e-4301-8ff3-e59355a8b2c0" 
+                alt="Mochila designer com múltiplos compartimentos e design moderno"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-2">Mochila Executiva</h3>
+              <p className="text-muted-foreground mb-4">
+                Material resistente à água, múltiplos compartimentos e design ergonômico.
+              </p>
+              <div className="flex justify-between items-center">
+                <span className="text-2xl font-bold text-primary">R$ 199,90</span>
+                <a 
+                  href="#comprar" 
+                  className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200"
+                >
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Product 4 */}
+          <div className="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 overflow-hidden">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Premium%20coffee%20maker%20with%20stainless%20steel%20finish%20on%20marble%20countertop&id=6ba3bd9d-ed8e-4301-8ff3-e59355a8b2c0" 
+                alt="Máquina de café premium com acabamento em aço inoxidável sobre bancada de mármore"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-2">Máquina de Café</h3>
+              <p className="text-muted-foreground mb-4">
+                Café espresso perfeito com sistema automático e moinho integrado.
+              </p>
+              <div className="flex justify-between items-center">
+                <span className="text-2xl font-bold text-primary">R$ 899,90</span>
+                <a 
+                  href="#comprar" 
+                  className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200"
+                >
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Product 5 */}
+          <div className="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 overflow-hidden">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Wireless%20charging%20pad%20with%20LED%20indicator%20and%20sleek%20design&id=6ba3bd9d-ed8e-4301-8ff3-e59355a8b2c0" 
+                alt="Base de carregamento wireless com indicador LED e design elegante"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-2">Carregador Wireless</h3>
+              <p className="text-muted-foreground mb-4">
+                Carregamento rápido com indicador LED e proteção contra superaquecimento.
+              </p>
+              <div className="flex justify-between items-center">
+                <span className="text-2xl font-bold text-primary">R$ 129,90</span>
+                <a 
+                  href="#comprar" 
+                  className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200"
+                >
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Product 6 */}
+          <div className="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="h-64 overflow-hidden">
+              <img 
+                src="https://placeholder-image-service.onrender.com/image/400x300?prompt=Ergonomic%20office%20chair%20with%20lumbar%20support%20and%20modern%20design&id=6ba3bd9d-ed8e-4301-8ff3-e59355a8b2c0" 
+                alt="Cadeira ergonômica para escritório com suporte lombar e design moderno"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-foreground mb-2">Cadeira Ergonômica</h3>
+              <p className="text-muted-foreground mb-4">
+                Conforto máximo com ajuste de altura e suporte lombar regulável.
+              </p>
+              <div className="flex justify-between items-center">
+                <span className="text-2xl font-bold text-primary">R$ 699,90</span>
+                <a 
+                  href="#comprar" 
+                  className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200"
+                >
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-muted border-t border-border mt-16">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center">
+            <h3 className="text-lg font-semibold text-foreground mb-4">Entre em Contato</h3>
+            <p className="text-muted-foreground mb-4">
+              Tem dúvidas sobre nossos produtos? Fale conosco!
+            </p>
+            <div className="flex justify-center gap-4">
+              <a href="#contato" className="text-primary hover:text-primary/80 transition-colors">
+                Email: contato@minhaloja.com
+              </a>
+              <span className="text-border">•</span>
+              <a href="#whatsapp" className="text-primary hover:text-primary/80 transition-colors">
+                WhatsApp: (11) 99999-9999
+              </a>
+            </div>
+          </div>
+          <div className="text-center mt-8 pt-4 border-t border-border">
+            <p className="text-sm text-muted-foreground">
+              © 2024 Minha Loja. Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default ProductShowcase;
